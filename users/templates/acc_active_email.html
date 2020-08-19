@@ -1,0 +1,95 @@
+{% autoescape off %}
+<div style="background-color: #f0f0f0; text-align:left; font-family: Tahoma, Geneva, Verdana, sans-serif;">
+    <div style="Margin:0 auto;max-width:600px;min-width:320px;width:500px;width:calc(28000% - 167400px);word-wrap:break-word;word-break:break-word">
+        <div style="border-collapse:collapse;display:table;width:100%">
+            <div style="text-align:left;font-size:12px;line-height:19px;color:#999;font-family:Tahoma,Ubuntu,sans-serif;Float:leftt;max-width:400px;min-width:320px;width:500px;width:calc(8000% - 47600px)">
+                <div style="Margin-left:20px;Margin-right:20px;Margin-top:10px;Margin-bottom:10px">
+                    <div style="font-size:40px;line-height:19px;Margin-top:18px">
+                        <div>&nbsp;
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout has-border fixed-width" style="Margin:0 auto;max-width:602px;min-width:322px;width:502px;width:calc(28000% - 167398px);word-wrap:break-word;word-break:break-word">
+        <div class="layout-inner" style="border-collapse:collapse;display:table;width:100%;background-color:#ffffff;border-top:1px solid #bdbdbd;border-right:1px solid #bdbdbd;border-bottom:1px solid #bdbdbd;border-left:1px solid #bdbdbd">
+            <div style="text-align:left;color:#787778;font-size:14px;line-height:21px;font-family:Tahoma, Ubuntu,sans-serif;max-width:600px;min-width:320px;width:500px;width:calc(28000% - 167400px)">
+                <span>
+                    <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px">
+                        <div style="line-height:28px;font-size:1px">&nbsp;</div>
+                    </div>
+                    <div style="Margin-left:20px;Margin-right:20px;Margin-top:24px">
+                        <div style="line-height:28px;font-size:1px">
+                        <h3 style="Margin-top:0;Margin-bottom:12px;font-style:normal;font-weight:normal;color:#555;font-size:28px;line-height:36px;font-family:avenir,sans-serif;text-align:center">
+                            <span>Welcome to Cooking Workshop</span>
+                        </h3>
+                        </div>
+                    </div>
+                    <div style="padding-top:10px;padding-bottom:10px;">
+                        <div style="Margin-left:0px;Margin-right:0px;">
+                            <div>
+                                <h3 style="Margin-top:0;Margin-bottom:12px;font-style:normal;font-weight:normal;color:#555;font-size:28px;line-height:36px;font-family:avenir,sans-serif;text-align:left">
+                                    <img style="max-width:600px; max-height:200px" src="https://www.palaisamani.com/wp-content/uploads/2020/02/header-2.jpg">
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="Margin-left:20px;Margin-right:20px;Margin-top:20px">
+                        <div style="line-height:20px;font-size:1px">
+                            &nbsp;
+                        </div>
+                    </div>
+                </span>
+                <div style="Margin-left:20px;Margin-right:20px">
+                    <div>
+                        <span class="im">
+                            <p style="Margin-top:0;Margin-bottom:0">
+                                Hi {{ user.first_name }},
+                            </p>
+                            <p style="Margin-top:0;Margin-bottom:0">
+                            Thanks so much for joining us!
+                            <br>
+                            You’re on your way to have your faviorite archive of 
+                            
+                            <strong>
+                                the best cooking recepites 
+                            </strong>
+                            in simple language for beginners.
+                            </p>
+                        </span>
+                        <p style="Margin-top:20px;Margin-bottom:40px">
+                        Please confirm your email address through the button below or copy 
+                        this link into your web browser:                            <br>
+                            <a target="_blank" href="http://{{ domain }}?uidb64={{ uid }}&token={{ token }}">
+                                http://{{ domain }}?uidb64={{ uid }}&token={{ token }}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+    <div style="Margin:0 auto;max-width:600px;min-width:320px;width:600px;word-wrap:break-word;word-break:break-word">
+        <div style="border-collapse:collapse;display:table;width:100%">
+            <div style="text-align:left;font-size:12px;line-height:19px;color:#999;font-family:Tahoma,Ubuntu,sans-serif;Float:left;min-width:320px;">
+                <div style="Margin-left:20px;Margin-right:20px;Margin-top:10px;Margin-bottom:10px">
+                    <div style="font-size:12px;line-height:19px;Margin-top:18px">
+                        <div>
+                        <br>
+                            You've received this email because you have signed up for 
+                            Cooking Workshop.                        
+                        <br>
+                            If you received this email by mistake, simply delete it. 
+                            You won't be subscribed if you don't click the confirmation link above.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="line-height:40px;font-size:40px">
+        &nbsp;
+    </div>
+</div>
+{% endautoescape %}
