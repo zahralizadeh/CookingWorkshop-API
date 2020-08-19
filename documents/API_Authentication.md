@@ -1,4 +1,12 @@
-[[_TOC_]]
+* [Login](#login)
+* [Register](#register)
+  * [Activate Account](#activate-account)
+* [logout](#logout)
+* [Change Password](#change-password)
+* [Forgot Password](#forgot-password)
+  * [Verify User by Email](#forgot-password---verify-user-by-email)
+  * [Reset Password](#reset-password---after-forgot-password)
+
 
 # login
 
