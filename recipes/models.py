@@ -56,6 +56,5 @@ class CookingStep(models.Model):
     #     ]
 
     def __str__(self):
-        title = "step"
         title = "%s - Step %d" % (self.recipe.title_fa, self.order)
         return title
