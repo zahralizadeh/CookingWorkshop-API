@@ -69,6 +69,7 @@ class RecipeAdmin(admin.ModelAdmin):
                      'alternate_link', 'published_date', ]
     actions = [update_recipes]
     inlines = [CookingStepInline, ]
+    filter_horizontal = ['categories', ]
     fieldsets = (
         (None, {
             'fields': (('title_fa', 'title_en'), ('alternate_link', 'published_date'), 'categories',)
