@@ -21,12 +21,32 @@ class AuthorAdmin(admin.ModelAdmin):
     search_fields = ['title_fa', 'title_en', 'email', 'website']
 
 
+class CookingStepInline(admin.TabularInline):
+    '''Tabular Inline View for cooking steps of a recipe'''
+
+    model = CookingStep
+    min_num = 3
+    max_num = 20
+    extra = 1
+    ordering = ['order']
+
+
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ['title_fa', 'title_en',
                     'alternate_link', 'published_date', 'author']
     search_fields = ['title_fa', 'title_en',
                      'alternate_link', 'published_date', ]
     actions = [update_recipes]
+    inlines = [CookingStepInline, ]
+    fieldsets = (
+        (None, {
+            'fields': ('title_fa', 'title_en', 'alternate_link', 'published_date', 'categories',)
+        }),
+        ('Advanced options', {
+            'classes': ('collapse',),
+            'fields': ('origin_id', 'self_link', 'crowled_date', 'updated_date', 'author', ),
+        }),
+    )
 
 
 class CookingStepAdmin(admin.ModelAdmin):
