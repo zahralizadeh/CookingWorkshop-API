@@ -38,7 +38,9 @@ class Recipe (models.Model):
     def __str__(self):
         if self.title_en is not None and self.title_en != "":
             return self.title_en
-        return self.title_fa
+        elif self.title_fa is not None and self.title_fa != "":
+            return self.title_fa
+        return self.origin_id
 
 
 class CookingStep(models.Model):
@@ -48,5 +50,12 @@ class CookingStep(models.Model):
     order = models.IntegerField(null=False)
     recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
 
+    # class Meta:
+    #     indexes = [
+    #         models.index(fields=[''])
+    #     ]
+
     def __str__(self):
-        return ("%s - Step %d" % (self.recipe, self.order))
+        title = "step"
+        title = "%s - Step %d" % (self.recipe.title_fa, self.order)
+        return title
