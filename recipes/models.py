@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.safestring import mark_safe
 
 
 class Author(models.Model):
@@ -35,6 +36,7 @@ class Recipe (models.Model):
     crowled_date = models.DateTimeField(default=timezone.now())
     author = models.ForeignKey('Author', on_delete=models.CASCADE)
     categories = models.ManyToManyField('Category',)
+    translated = models.BooleanField(default=False,)
 
     def __str__(self):
         if self.title_en is not None and self.title_en != "":
@@ -52,9 +54,10 @@ class CookingStep(models.Model):
     '''
     image = models.URLField(max_length=300, null=True)
     description_fa = models.TextField(null=True)
-    description_en = models.TextField(null=True)
+    description_en = models.TextField(null=True, blank=True)
     order = models.IntegerField(null=False)
-    recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)
+    recipe = models.ForeignKey(
+        'Recipe', related_name='steps', on_delete=models.CASCADE)
 
     # class Meta:
     #     indexes = [
@@ -64,3 +67,8 @@ class CookingStep(models.Model):
     def __str__(self):
         title = "%s - Step %d" % (self.recipe.title_fa, self.order)
         return title
+
+    def image_show_thumbnail(self):
+        return mark_safe(u'<a href="%s" target="_blank">'
+                         '<img src="%s" width="%d" alt="%s" />'
+                         '</a>' % (image_url, image_url, image_width, file_name))
