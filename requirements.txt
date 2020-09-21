@@ -7,7 +7,7 @@ chardet==3.0.4
 constantly==15.1.0
 cryptography==3.0
 cssselect==1.1.0
-dataclasses==0.7
+dataclasses==0.6 #0.7
 Django==3.0.5
 django-appconf==1.0.4
 django-cors-headers==3.4.0
